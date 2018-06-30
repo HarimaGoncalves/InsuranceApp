@@ -3,15 +3,29 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Harima Arouca Goncalves</title>
+    <title>@ViewBag.Title </title>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script>
-        function setMyValue() {
-            $(".navbar-brand").attr("href", $(".navbar-brand").attr("href").replace("policyNumberValue", $('#PolicyNumber').val()));
-            $(".navbar-brand").attr("href", $(".navbar-brand").attr("href").replace("userValue", $('#User').val()));
-            $(".navbar-brand").attr("href", $(".navbar-brand").attr("href").replace("pswValue", $('#Pass').val()));
-            $(".navbar-brand").attr("href", $(".navbar-brand").attr("href").replace("idValue", $('#Id').val()));
-            $(".navbar-brand").attr("href", $(".navbar-brand").attr("href").replace("nameValue", $('#Name').val()));
+        function setMyValue1() {
+            $(".navbar-brand1").attr("href", $(".navbar-brand1").attr("href").replace("policyNumberValue", $('#PolicyNumber').val()));
+            $(".navbar-brand1").attr("href", $(".navbar-brand1").attr("href").replace("userValue", $('#User').val()));
+            $(".navbar-brand1").attr("href", $(".navbar-brand1").attr("href").replace("pswValue", $('#Pass').val()));
+        }
+        function setMyValue2() {
+            $(".navbar-brand2").attr("href", $(".navbar-brand2").attr("href").replace("userValue", $('#User').val()));
+            $(".navbar-brand2").attr("href", $(".navbar-brand2").attr("href").replace("pswValue", $('#Pass').val()));
+            $(".navbar-brand2").attr("href", $(".navbar-brand2").attr("href").replace("idValue", $('#Id').val()));
+        }
+        function setMyValue3() {
+            $(".navbar-brand3").attr("href", $(".navbar-brand3").attr("href").replace("userValue", $('#User').val()));
+            $(".navbar-brand3").attr("href", $(".navbar-brand3").attr("href").replace("pswValue", $('#Pass').val()));
+            $(".navbar-brand3").attr("href", $(".navbar-brand3").attr("href").replace("nameValue", $('#Name').val()));
+        }
+        function setMyValue4() {
+            $(".navbar-brand3").attr("href", $(".navbar-brand3").attr("href").replace("userValue", $('#User').val()));
+            $(".navbar-brand3").attr("href", $(".navbar-brand3").attr("href").replace("pswValue", $('#Pass').val()));
+            $(".navbar-brand3").attr("href", $(".navbar-brand3").attr("href").replace("nameValue", $('#Name').val()));
         }
     </script>
 </head>
@@ -27,22 +41,19 @@
                 @Html.Label("Pass/Id")
                 @Html.TextBox("Pass")
                 <br />
-                @Html.ActionLink("GetUserByPoliceNumber", "GetUserByPoliceNumber", "User", new { policyNumber = "policyNumberValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand", onclick = "setMyValue();" })
+                @Html.ActionLink("GetUserByPoliceNumber", "GetUserByPoliceNumber", "User", new { policyNumber = "policyNumberValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand1", onclick = "setMyValue1();" })
                 <br />
                 @Html.Label("PolicyNumber")
                 @Html.TextBox("PolicyNumber")
                 <br />
-                @Html.ActionLink("GetUserByID", "GetUserByID", "User", new { id = "idValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand", onclick = "setMyValue();" })
+                @Html.ActionLink("GetUserByID", "GetUserByID", "User", new { id = "idValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand2", onclick = "setMyValue2();" })
                 <br />
                 @Html.Label("Id")
                 @Html.TextBox("Id")
                 <br />
-                @Html.ActionLink("GetUserByName", "GetUserByName", "User", new { name = "nameValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand", onclick = "setMyValue();" })
+                @Html.ActionLink("GetUserByName", "GetUserByName", "User", new { name = "nameValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand3", onclick = "setMyValue3();" })
                 <br />
-                @Html.Label("Name")
-                @Html.TextBox("Name")
-                <br />
-                @Html.ActionLink("GetPolicesByUserName", "GetPolicesByUserName", "Policy", new { name = "nameValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand", onclick = "setMyValue();" })
+                @Html.ActionLink("GetPolicesByUserName", "GetPolicesByUserName", "Policy", new { name = "nameValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand4", onclick = "setMyValue4();" })
                 <br />
                 @Html.Label("Name")
                 @Html.TextBox("Name")
