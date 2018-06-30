@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Harima Arouca Goncalves</title>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script>
+        function setMyValue() {
+            $(".navbar-brand").attr("href", $(".navbar-brand").attr("href").replace("policyNumberValue", $('#PolicyNumber').val()));
+            $(".navbar-brand").attr("href", $(".navbar-brand").attr("href").replace("userValue", $('#User').val()));
+            $(".navbar-brand").attr("href", $(".navbar-brand").attr("href").replace("pswValue", $('#Pass').val()));
+            $(".navbar-brand").attr("href", $(".navbar-brand").attr("href").replace("idValue", $('#Id').val()));
+            $(".navbar-brand").attr("href", $(".navbar-brand").attr("href").replace("nameValue", $('#Name').val()));
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.Label("Authentication")
+                <br />
+                @Html.Label("User/Email")
+                @Html.TextBox("User")
+                <br />
+                @Html.Label("Pass/Id")
+                @Html.TextBox("Pass")
+                <br />
+                @Html.ActionLink("GetUserByPoliceNumber", "GetUserByPoliceNumber", "User", new { policyNumber = "policyNumberValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand", onclick = "setMyValue();" })
+                <br />
+                @Html.Label("PolicyNumber")
+                @Html.TextBox("PolicyNumber")
+                <br />
+                @Html.ActionLink("GetUserByID", "GetUserByID", "User", new { id = "idValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand", onclick = "setMyValue();" })
+                <br />
+                @Html.Label("Id")
+                @Html.TextBox("Id")
+                <br />
+                @Html.ActionLink("GetUserByName", "GetUserByName", "User", new { name = "nameValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand", onclick = "setMyValue();" })
+                <br />
+                @Html.Label("Name")
+                @Html.TextBox("Name")
+                <br />
+                @Html.ActionLink("GetPolicesByUserName", "GetPolicesByUserName", "Policy", new { name = "nameValue", user = "userValue", psw = "pswValue" }, new { @class = "navbar-brand", onclick = "setMyValue();" })
+                <br />
+                @Html.Label("Name")
+                @Html.TextBox("Name")
+                <br />
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Harima Arouca Goncalves</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
